@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f7f7f5;
+  --surface: #ffffff;
+  --surface-muted: #f1f1ee;
+  --foreground: #1c1c1a;
+  --muted: #6b6b64;
+  --border: #e3e2dd;
+
+  --brand: #b5542a;
+  --brand-foreground: #ffffff;
+  --brand-soft: #fbe9df;
+
+  --success: #2f7a4f;
+  --success-soft: #e3f3e8;
+  --warning: #a16207;
+  --warning-soft: #fdf1d8;
+  --danger: #b4382b;
+  --danger-soft: #fbe6e2;
+  --info: #35618c;
+  --info-soft: #e4edf5;
+}
+
+.dark {
+  --background: #16151a;
+  --surface: #1d1c22;
+  --surface-muted: #252329;
+  --foreground: #f1efea;
+  --muted: #a3a09b;
+  --border: #322f36;
+
+  --brand: #e07a4b;
+  --brand-foreground: #16151a;
+  --brand-soft: #3a2a22;
+
+  --success: #5fb87f;
+  --success-soft: #1e3324;
+  --warning: #e0b23c;
+  --warning-soft: #3a2f14;
+  --danger: #e2685a;
+  --danger-soft: #3a211d;
+  --info: #7cabd9;
+  --info-soft: #1f2d3a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-soft: var(--brand-soft);
+
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+
+  --font-sans: var(--font-main);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+input,
+textarea,
+select {
+  background: var(--surface);
+  color: var(--foreground);
+}
